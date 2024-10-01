@@ -1,18 +1,18 @@
 package com.hello.core.order;
 
-import com.hello.core.discount.DiscoutPolicy;
-import com.hello.core.discount.FixDiscountPolicy;
-import com.hello.core.discount.RateDiscountPolicy;
+import com.hello.core.discount.DiscountPolicy;
 import com.hello.core.member.Member;
 import com.hello.core.member.MemberRepository;
-import com.hello.core.member.MemberServiceImpl;
-import com.hello.core.member.MemoryMemberRepository;
 
 public class OrderServiceImpl implements OrderService{
     private final MemberRepository memberRepository;
-    private final DiscoutPolicy discoutPolicy;
 
-    public OrderServiceImpl(MemberRepository memberRepository, DiscoutPolicy discoutPolicy){
+    public MemberRepository getMemberRepository(){
+        return memberRepository;
+    }
+    private final DiscountPolicy discoutPolicy;
+
+    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discoutPolicy){
          this.memberRepository = memberRepository;
          this.discoutPolicy = discoutPolicy;
     }
