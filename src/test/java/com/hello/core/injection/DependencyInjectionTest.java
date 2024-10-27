@@ -1,13 +1,12 @@
 package com.hello.core.injection;
 
+import com.hello.core.annotation.MainDiscountPolicy;
 import com.hello.core.discount.DiscountPolicy;
-import com.hello.core.discount.FixDiscountPolicy;
 import com.hello.core.discount.RateDiscountPolicy;
+import com.hello.core.member.MemberRepository;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 
@@ -34,5 +33,11 @@ public class DependencyInjectionTest {
 //    void beanInjectionByPrimary(){
 //        Assertions.assertInstanceOf(RateDiscountPolicy.class,discountPolicy);
 //        Assertions.assertNotSame(FixDiscountPolicy.class,discountPolicy);
+
+//   annotation 직접 정의
+//    @Test
+//    void Test(@Autowired DiscountPolicy discountPolicy){
+//        System.out.println(discountPolicy);
+//       Assertions.assertInstanceOf(RateDiscountPolicy.class,discountPolicy);
 //    }
 }
